@@ -6,6 +6,13 @@ function startTimer() {
   startTime = new Date();
   localStorage.setItem("startTime", startTime.getTime());
 
+  // Mostra l'alert prima di avviare il timer
+  const alertDate = new Date(startTime.getTime() + 3 * 60 * 60 * 1000); // Aggiunge 3 ore
+  const alertTime = alertDate.toLocaleTimeString();
+  alert(
+    "Ricorda di mettere la sveglia fra 3 ore! Orario da impostare: " + alertTime
+  );
+
   timerInterval = setInterval(updateTimer, 1000);
 }
 
